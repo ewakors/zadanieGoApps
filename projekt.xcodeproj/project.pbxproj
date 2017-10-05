@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		C3ADFE821F86395800AC1368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFE811F86395800AC1368 /* AppDelegate.swift */; };
-		C3ADFE841F86395800AC1368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFE831F86395800AC1368 /* ViewController.swift */; };
 		C3ADFE871F86395800AC1368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3ADFE851F86395800AC1368 /* Main.storyboard */; };
 		C3ADFE891F86395900AC1368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3ADFE881F86395900AC1368 /* Assets.xcassets */; };
 		C3ADFE8C1F86395900AC1368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3ADFE8A1F86395900AC1368 /* LaunchScreen.storyboard */; };
 		C3ADFE971F86395A00AC1368 /* projektTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFE961F86395A00AC1368 /* projektTests.swift */; };
 		C3ADFEA21F86395A00AC1368 /* projektUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEA11F86395A00AC1368 /* projektUITests.swift */; };
+		C3ADFEB11F8639DB00AC1368 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEB01F8639DB00AC1368 /* API.swift */; };
+		C3ADFEB31F8639FB00AC1368 /* MyJSONProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEB21F8639FB00AC1368 /* MyJSONProtocol.swift */; };
+		C3ADFEB51F863A1E00AC1368 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEB41F863A1E00AC1368 /* Router.swift */; };
+		C3ADFEB81F863A8200AC1368 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEB71F863A8200AC1368 /* Item.swift */; };
+		C3ADFEBA1F863A8B00AC1368 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEB91F863A8B00AC1368 /* ItemCell.swift */; };
+		C3ADFEBC1F863AA600AC1368 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFEBB1F863AA600AC1368 /* ItemViewController.swift */; };
+		C3ADFEC01F863C3300AC1368 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3ADFEBE1F863C3300AC1368 /* Alamofire.framework */; };
+		C3ADFEC11F863C3300AC1368 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3ADFEBF1F863C3300AC1368 /* SwiftyJSON.framework */; };
+		C3ADFEC31F863C4300AC1368 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3ADFEBE1F863C3300AC1368 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3ADFEC41F863C4300AC1368 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3ADFEBF1F863C3300AC1368 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +42,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C3ADFEC21F863C3900AC1368 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C3ADFEC31F863C4300AC1368 /* Alamofire.framework in CopyFiles */,
+				C3ADFEC41F863C4300AC1368 /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C3ADFE7E1F86395800AC1368 /* projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3ADFE811F86395800AC1368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3ADFE831F86395800AC1368 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3ADFE861F86395800AC1368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3ADFE881F86395900AC1368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3ADFE8B1F86395900AC1368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +69,14 @@
 		C3ADFE9D1F86395A00AC1368 /* projektUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projektUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3ADFEA11F86395A00AC1368 /* projektUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projektUITests.swift; sourceTree = "<group>"; };
 		C3ADFEA31F86395A00AC1368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3ADFEB01F8639DB00AC1368 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
+		C3ADFEB21F8639FB00AC1368 /* MyJSONProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyJSONProtocol.swift; path = ../MyJSONProtocol.swift; sourceTree = "<group>"; };
+		C3ADFEB41F863A1E00AC1368 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Router.swift; path = ../Router.swift; sourceTree = "<group>"; };
+		C3ADFEB71F863A8200AC1368 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C3ADFEB91F863A8B00AC1368 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		C3ADFEBB1F863AA600AC1368 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		C3ADFEBE1F863C3300AC1368 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C3ADFEBF1F863C3300AC1368 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3ADFEC01F863C3300AC1368 /* Alamofire.framework in Frameworks */,
+				C3ADFEC11F863C3300AC1368 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +113,7 @@
 				C3ADFE951F86395A00AC1368 /* projektTests */,
 				C3ADFEA01F86395A00AC1368 /* projektUITests */,
 				C3ADFE7F1F86395800AC1368 /* Products */,
+				C3ADFEBD1F863C3200AC1368 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +130,11 @@
 		C3ADFE801F86395800AC1368 /* projekt */ = {
 			isa = PBXGroup;
 			children = (
-				C3ADFE811F86395800AC1368 /* AppDelegate.swift */,
-				C3ADFE831F86395800AC1368 /* ViewController.swift */,
-				C3ADFE851F86395800AC1368 /* Main.storyboard */,
-				C3ADFE881F86395900AC1368 /* Assets.xcassets */,
-				C3ADFE8A1F86395900AC1368 /* LaunchScreen.storyboard */,
-				C3ADFE8D1F86395900AC1368 /* Info.plist */,
+				C3ADFEB61F863A7100AC1368 /* Items */,
+				C3ADFEAF1F86395A00AC1368 /* support */,
+				C3ADFEB01F8639DB00AC1368 /* API.swift */,
+				C3ADFEB21F8639FB00AC1368 /* MyJSONProtocol.swift */,
+				C3ADFEB41F863A1E00AC1368 /* Router.swift */,
 			);
 			path = projekt;
 			sourceTree = "<group>";
@@ -125,6 +157,38 @@
 			path = projektUITests;
 			sourceTree = "<group>";
 		};
+		C3ADFEAF1F86395A00AC1368 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				C3ADFE811F86395800AC1368 /* AppDelegate.swift */,
+				C3ADFE851F86395800AC1368 /* Main.storyboard */,
+				C3ADFE881F86395900AC1368 /* Assets.xcassets */,
+				C3ADFE8A1F86395900AC1368 /* LaunchScreen.storyboard */,
+				C3ADFE8D1F86395900AC1368 /* Info.plist */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
+		C3ADFEB61F863A7100AC1368 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				C3ADFEB71F863A8200AC1368 /* Item.swift */,
+				C3ADFEB91F863A8B00AC1368 /* ItemCell.swift */,
+				C3ADFEBB1F863AA600AC1368 /* ItemViewController.swift */,
+			);
+			name = Items;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C3ADFEBD1F863C3200AC1368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3ADFEBE1F863C3300AC1368 /* Alamofire.framework */,
+				C3ADFEBF1F863C3300AC1368 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +199,7 @@
 				C3ADFE7A1F86395800AC1368 /* Sources */,
 				C3ADFE7B1F86395800AC1368 /* Frameworks */,
 				C3ADFE7C1F86395800AC1368 /* Resources */,
+				C3ADFEC21F863C3900AC1368 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -262,7 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3ADFE841F86395800AC1368 /* ViewController.swift in Sources */,
+				C3ADFEBC1F863AA600AC1368 /* ItemViewController.swift in Sources */,
+				C3ADFEB31F8639FB00AC1368 /* MyJSONProtocol.swift in Sources */,
+				C3ADFEB51F863A1E00AC1368 /* Router.swift in Sources */,
+				C3ADFEB11F8639DB00AC1368 /* API.swift in Sources */,
+				C3ADFEBA1F863A8B00AC1368 /* ItemCell.swift in Sources */,
+				C3ADFEB81F863A8200AC1368 /* Item.swift in Sources */,
 				C3ADFE821F86395800AC1368 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +486,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K6HTDHMS83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ewa.projekt;
@@ -429,6 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K6HTDHMS83;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ewa.projekt;
