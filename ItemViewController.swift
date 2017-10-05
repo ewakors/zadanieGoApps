@@ -10,17 +10,24 @@ import UIKit
 
 class ItemViewController: UIViewController {
     
-    
     @IBOutlet var tableView: UITableView!
-    var items = [Item]()
     
+    var items = [Item]()
+    var refresher: UIRefreshControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self as! UITableViewDataSource
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(ItemViewController.displayItems), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
+        
+        tableView.dataSource = self as UITableViewDataSource
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100.0
         //itemTableView.dataSource = self as! UITableViewDataSource
         displayItems()
-        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,9 +44,8 @@ class ItemViewController: UIViewController {
                  
                     self.items = Item.arrayFromJSON(json: json)
 
-                    DispatchQueue.main.async {
-                        self.tableView?.reloadData()
-                    } 
+                    self.tableView?.reloadData()
+                    self.refresher.endRefreshing()
                 }
             }
         }
@@ -52,6 +58,8 @@ extension ItemViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Item.identifier , for: indexPath) as! ItemCell
         
         cell.setItem(item: items[indexPath.row])
+        cell.itemSubtitleLabel.numberOfLines = 0
+        
         return cell
     }
 

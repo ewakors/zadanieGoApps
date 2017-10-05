@@ -12,9 +12,9 @@ class ItemCell: UITableViewCell {
     
     
     @IBOutlet var itemTitleLabel: UILabel!
-    
     @IBOutlet var itemSubtitleLabel: UILabel!
     @IBOutlet var itemImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,11 +33,15 @@ class ItemCell: UITableViewCell {
         let itemThumbURL = item.getThumb()
         let thumbUrl = NSURL(string: itemThumbURL)
         
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: thumbUrl! as URL)
-            DispatchQueue.main.async {
-                self.itemImageView.image = UIImage(data: data!)
+        if itemThumbURL != "" {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: thumbUrl! as URL)
+                DispatchQueue.main.async {
+                    self.itemImageView.image = UIImage(data: data!)
+                }
             }
+        } else {
+            
         }
         //itemSubtitleLabel.text = item.getSubtitle()
     }
