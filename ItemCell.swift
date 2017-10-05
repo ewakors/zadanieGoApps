@@ -31,8 +31,14 @@ class ItemCell: UITableViewCell {
         itemSubtitleLabel.text = item.getSubtitle()
         
         let itemThumbURL = item.getThumb()
-        let thumUrl = NSURL(string: itemThumbURL)
-        //itemImageView.
+        let thumbUrl = NSURL(string: itemThumbURL)
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: thumbUrl! as URL)
+            DispatchQueue.main.async {
+                self.itemImageView.image = UIImage(data: data!)
+            }
+        }
         //itemSubtitleLabel.text = item.getSubtitle()
     }
     
