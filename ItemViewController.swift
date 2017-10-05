@@ -60,6 +60,8 @@ extension ItemViewController: UITableViewDataSource {
         cell.setItem(item: items[indexPath.row])
         cell.itemSubtitleLabel.numberOfLines = 0
         
+        cell.cellType = .RedCell
+        
         return cell
     }
 

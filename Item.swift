@@ -57,6 +57,12 @@ class Item: MyJSONProtocol {
     func getColor() -> String {
         return color
     }
+    var backgroundColor: UIColor {
+        if color == "red" {
+            return UIColor.red
+        }
+        return UIColor.blue
+    }
     
     func fromJSON(json: JSON) {
         self.id = json[Item.itemIdField].intValue

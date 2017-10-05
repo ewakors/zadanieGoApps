@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C33D50031F867E5E0001A3A3 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D50021F867E5E0001A3A3 /* ItemDetailsViewController.swift */; };
 		C3ADFE821F86395800AC1368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADFE811F86395800AC1368 /* AppDelegate.swift */; };
 		C3ADFE871F86395800AC1368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3ADFE851F86395800AC1368 /* Main.storyboard */; };
 		C3ADFE891F86395900AC1368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3ADFE881F86395900AC1368 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C33D50021F867E5E0001A3A3 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		C3ADFE7E1F86395800AC1368 /* projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3ADFE811F86395800AC1368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3ADFE861F86395800AC1368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				C3ADFEB71F863A8200AC1368 /* Item.swift */,
 				C3ADFEB91F863A8B00AC1368 /* ItemCell.swift */,
 				C3ADFEBB1F863AA600AC1368 /* ItemViewController.swift */,
+				C33D50021F867E5E0001A3A3 /* ItemDetailsViewController.swift */,
 			);
 			name = Items;
 			path = ..;
@@ -333,6 +336,7 @@
 				C3ADFEB11F8639DB00AC1368 /* API.swift in Sources */,
 				C3ADFEBA1F863A8B00AC1368 /* ItemCell.swift in Sources */,
 				C3ADFEB81F863A8200AC1368 /* Item.swift in Sources */,
+				C33D50031F867E5E0001A3A3 /* ItemDetailsViewController.swift in Sources */,
 				C3ADFE821F86395800AC1368 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +596,7 @@
 				C3ADFEA81F86395A00AC1368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3ADFEA91F86395A00AC1368 /* Build configuration list for PBXNativeTarget "projektTests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +605,7 @@
 				C3ADFEAB1F86395A00AC1368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3ADFEAC1F86395A00AC1368 /* Build configuration list for PBXNativeTarget "projektUITests" */ = {
 			isa = XCConfigurationList;
@@ -608,6 +614,7 @@
 				C3ADFEAE1F86395A00AC1368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
