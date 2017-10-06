@@ -14,19 +14,20 @@ import SwiftyJSON
 enum Router: URLRequestConvertible {
     
     static let baseURLString = "http://test.goapps.vipserv.org/"
+    static let token = "SUPERSECRETACCESSTOKEN"
     
-    case getItems()
+    case getItems(page: Int, count: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .getItems():
+        case .getItems:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .getItems():
+        case .getItems:
             return "index.php"
         }
     }
@@ -42,8 +43,8 @@ enum Router: URLRequestConvertible {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         
         switch self {
-        case .getItems():
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
+        case .getItems(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: ["page": parameters.page, "count": parameters.count])
         }
         return urlRequest
     }

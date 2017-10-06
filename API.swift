@@ -24,7 +24,6 @@ class API: NSObject {
             if result.result.isSuccess {
                 
                 if let response = result.response {
-                    //print(Router.token)
                     let code = response.statusCode
                     
                     if code >= 200 && code < 400 {
@@ -38,7 +37,6 @@ class API: NSObject {
                     } else {
                         if let value = result.result.value {
                             let json = JSON(value)
-                            print("json API: \(json)")
                             completion(json, true)
                         } else {
                             completion(nil, true)

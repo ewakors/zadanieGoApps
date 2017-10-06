@@ -10,6 +10,12 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+enum BacgroundCellColor: String {
+    case Red = "red"
+    case Blue = "blue"
+    case Green = "green"
+}
+
 class Item: MyJSONProtocol {
     typealias T = Item
     
@@ -21,6 +27,8 @@ class Item: MyJSONProtocol {
     static let itemColorField = "color"
     
     static let identifier = "cell"
+    static let itemDetailsSequage = "itemDetailsSegue"
+    static let itemShowDetailsSeguage = "itemShowDetails"
     
     private var id: Int
     private var title: String
@@ -57,11 +65,18 @@ class Item: MyJSONProtocol {
     func getColor() -> String {
         return color
     }
-    var backgroundColor: UIColor {
-        if color == "red" {
+    
+    func backgroundColor() -> UIColor {
+        
+        if color == BacgroundCellColor.Red.rawValue {
             return UIColor.red
+        } else if color == BacgroundCellColor.Blue.rawValue {
+            return UIColor.blue
+        } else if color == BacgroundCellColor.Green.rawValue{
+            return UIColor.green
+        } else {
+            return UIColor.clear
         }
-        return UIColor.blue
     }
     
     func fromJSON(json: JSON) {
@@ -84,7 +99,7 @@ class Item: MyJSONProtocol {
             i.thumb = item[Item.itemThumbField].stringValue
             i.color = item[Item.itemColorField].stringValue
             
-            print(i.title)
+            print(i.color)
 
             result.append(Item(json: item))
         }

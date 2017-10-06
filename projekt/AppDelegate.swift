@@ -13,8 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static let udTokenKey = "udTokenKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+//        if let token = UserDefaults.standard.string(forKey: AppDelegate.udTokenKey) {
+//            Router.token = token
+//            
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            self.window?.makeKeyAndVisible()
+//        }
         // Override point for customization after application launch.
         return true
     }

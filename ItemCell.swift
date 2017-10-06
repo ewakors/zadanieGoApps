@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum CellType {
-    case RedCell
-    case Yellowcell
-    case OrangeCell
-}
-
 class ItemCell: UITableViewCell {
     
     
@@ -23,7 +17,6 @@ class ItemCell: UITableViewCell {
     @IBOutlet var itemSubtitleLabel: UILabel!
     @IBOutlet var itemImageView: UIImageView!
     
-    var cellType: CellType = CellType.RedCell
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +27,7 @@ class ItemCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
+
     func setItem(item: Item) {
         itemTitleLabel.text = item.getTitle()
         itemSubtitleLabel.text = item.getSubtitle()
@@ -52,8 +45,5 @@ class ItemCell: UITableViewCell {
         } else {
             
         }
-        
-        
     }
-    
 }

@@ -10,26 +10,53 @@ import UIKit
 
 class ItemDetailsViewController: UIViewController {
 
+    @IBOutlet var itemSubtitleLabel: UILabel!
+    @IBOutlet var itemTitleLabel: UILabel!
+    @IBOutlet var thumbImageView: UIImageView!
+    
+    var itemTitleString: String!
+    var itemSubtitleString: String!
+    var itemImageURL: String!
+    var titleColor: UIColor!
+    var currentItem: Item?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let title = itemTitleString {
+            itemTitleLabel.text = title
+        }
+        
+        if let subtitle = itemSubtitleString {
+            itemSubtitleLabel.text = subtitle
+        }
+        
+        if let itemThumbURL = itemImageURL {
+            let thumbUrl = NSURL(string: itemThumbURL)
+            
+            if itemThumbURL != "" {
+                let data = try? Data(contentsOf: thumbUrl! as URL)
+                
+                DispatchQueue.main.async {
+                    self.thumbImageView.image = UIImage(data: data!)
+                }
+            } else {
+                
+            }
+        }
+        
+        if let color = titleColor {
+            itemTitleLabel.textColor = color
+        }
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
